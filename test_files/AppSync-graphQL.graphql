@@ -1,0 +1,242 @@
+--------------------------------------------------
+-------------------  PLAN    ---------------------
+--------------------------------------------------
+INPUT (id must be set):
+mutation CreatePlan {
+  createPlan(input: {_id: "cb04015a-c448-4098-98c2-a529efc8fbec", 
+  _rev: "8c09990e-a756-4a64-8dd8-195ed3d3dd90", 
+  doc_type: "Plan Tree", headerMap: "8e95600d-cd1a-40e2-87e8-106a1d201882", plan: "fc9ab14e111614da9ff115001d7b"}) {
+    _deleted
+    _id
+    _lastChangedAt
+    _rev
+    _version
+    createdAt
+    doc_type
+    headerMap
+    id
+    plan
+  }
+}
+OUTPUT1:
+{
+  "data": {
+    "createPlan": {
+      "_deleted": null,
+      "_id": "cb04015a-c448-4098-98c2-a529efc8fbec",
+      "_lastChangedAt": 1617610466450,
+      "_rev": "8c09990e-a756-4a64-8dd8-195ed3d3dd90",
+      "_version": 1,
+      "createdAt": "2021-04-05T08:14:26.427Z",
+      "doc_type": "Plan Tree",
+      "headerMap": "8e95600d-cd1a-40e2-87e8-106a1d201882",
+      "id": "f77f56d9-4e19-447a-b660-16e178db5d75",
+      "plan": "fc9ab14e111614da9ff115001d7b"
+    }
+  }
+}
+
+OUTPUT2:
+{
+  "data": {
+    "createPlan": {
+      "_deleted": null,
+      "_id": "cb04015a-c448-4098-98c2-a529efc8fbec",
+      "_lastChangedAt": 1617610584617,
+      "_rev": "8c09990e-a756-4a64-8dd8-195ed3d3dd90",
+      "_version": 1,
+      "createdAt": "2021-04-05T08:16:24.593Z",
+      "doc_type": "Plan Tree",
+      "headerMap": "8e95600d-cd1a-40e2-87e8-106a1d201882",
+      "id": "fe58e992-adab-4ae0-a590-d4508067aa52",
+      "plan": "fc9ab14e111614da9ff115001d7b"
+    }
+  }
+}
+
+mutation CreatePlan {
+  createPlan(input: {_id: "86a0fc9ab14e111614da9ff115002052", _rev: "5-f51818767fec0b2e1638e08b36bcbd7d", doc_type: "Plan Tree", headerMap: "86a0fc9ab14e111614da9ff115001dbf", plan: "86a0fc9ab14e111614da9ff115001d7b"}) {
+    _id
+  }
+}
+
+-----PlanQuery----
+getPlan->
+query PlanQuery {
+  getPlan(id: "fe58e992-adab-4ae0-a590-d4508067aa52") {
+    id
+    doc_type
+    headerMap
+  }
+}
+
+OUTPUT:
+{
+  "data": {
+    "getPlan": {
+      "id": "fe58e992-adab-4ae0-a590-d4508067aa52",
+      "doc_type": "Plan Tree",
+      "headerMap": "8e95600d-cd1a-40e2-87e8-106a1d201882",
+      "_id": "cb04015a-c448-4098-98c2-a529efc8fbec",
+      "_rev": "8c09990e-a756-4a64-8dd8-195ed3d3dd90"
+    }
+  }
+}
+
+listPlans:
+query PlanQuery {
+  listPlans(filter: {doc_type: {eq: "Plan Tree"}}) {
+    startedAt
+    items {
+      _id
+      _rev
+      doc_type
+      headerMap
+      id
+      plan
+      _version
+      _deleted
+    }
+  }
+}
+
+
+
+OUTPUT:
+{
+  "data": {
+    "listPlans": {
+      "startedAt": null,
+      "items": [
+        {
+          "_id": "86a0fc9ab14e111614da9ff115002052",
+          "_rev": "5-f51818767fec0b2e1638e08b36bcbd7d",
+          "doc_type": "Plan Tree",
+          "headerMap": "86a0fc9ab14e111614da9ff115001dbf",
+          "id": "c91cf8df-ddea-40ec-9d1c-14c2d2946d8a",
+          "plan": "86a0fc9ab14e111614da9ff115001d7b",
+          "_version": 3
+        },
+        {
+          "_id": "cb04015a-c448-4098-98c2-a529efc8fbec",
+          "_rev": "8c09990e-a756-4a64-8dd8-195ed3d3dd90",
+          "doc_type": "Plan Tree",
+          "headerMap": "8e95600d-cd1a-40e2-87e8-106a1d201882",
+          "id": "f77f56d9-4e19-447a-b660-16e178db5d75",
+          "plan": "fc9ab14e111614da9ff115001d7b",
+          "_version": 1
+        },
+        {
+          "_id": "cb04015a-c448-4098-98c2-a529efc8fbec",
+          "_rev": "8c09990e-a756-4a64-8dd8-195ed3d3dd90",
+          "doc_type": "Plan Tree",
+          "headerMap": "8e95600d-cd1a-40e2-87e8-106a1d201882",
+          "id": "fe58e992-adab-4ae0-a590-d4508067aa52",
+          "plan": "fc9ab14e111614da9ff115001d7b",
+          "_version": 1
+        }
+      ]
+    }
+  }
+}
+
+Delete:
+mutation PlanMutation {
+  deletePlan(input: {id: "c91cf8df-ddea-40ec-9d1c-14c2d2946d8a", _version: 1}) {
+    id
+  }
+}
+
+{
+  "data": {
+    "deletePlan": {
+      "id": "c91cf8df-ddea-40ec-9d1c-14c2d2946d8a"
+    }
+  }
+}
+
+:Every time a delete happens with Delete in DynamoDB with conflict resolution a new version is added. So how to Query?
+
+--------------------------------------------------
+-------------------  CHILDREN    -----------------
+--------------------------------------------------
+-- KPI (3rd Level KPI1) (id must be unique)
+mutation NDCPlanMutation {
+  createChildren(input: {
+      id: "1a59f47d-91f5-11eb-9931-dba05b4e8987-37a3d258-3fe1-4e2b-95d8-e1963afa3a0c-11-46",
+      supply: "[['1a59f46c-91f5-11eb-9931-dba05b4e8987-bbea3720-c390-4bc6-9fa8-c785e433b366-11-29'],['1a59f46d-91f5-11eb-9931-dba05b4e8987-1f4644f9-cc40-4f1a-9af3-a34ffc3e12d8-11-30']]",
+      demand: "['1a59f469-91f5-11eb-9931-dba05b4e8987-6977f67b-345e-41c0-bf38-272558fdcd29-11-26','1a59f46b-91f5-11eb-9931-dba05b4e8987-863081d6-7ea0-4439-a73e-258e4f466e9b-11-28']"
+  }) {
+    _deleted
+    _lastChangedAt
+    _version
+    createdAt
+    demand
+    id
+    supply
+    updatedAt
+  }
+}
+
+-- KPI (3rd Level KPI2) (id must be unique)
+mutation NDCPlanMutation {
+  createChildren(input: {
+      id: "1a59f494-91f5-11eb-9931-dba05b4e8987-43d5c2a2-e996-482f-9011-81c290fd6a4d-11-69",
+      supply: "[['1a59f495-91f5-11eb-9931-dba05b4e8987-22893158-ff04-4106-b905-49d4ccd31bad-11-70'],['1a59f496-91f5-11eb-9931-dba05b4e8987-5852a69a-caf3-4a63-88ae-524cc204e192-11-71']]",
+      demand: "['1a5a1b66-91f5-11eb-9931-dba05b4e8987-d89967cf-5f18-4462-a2dc-6930c44745bf-11-78','1a5a1b67-91f5-11eb-9931-dba05b4e8987-d1e60635-cf62-4441-94ef-b44bc27c31d6-11-79']"
+  }) {
+    _deleted
+    _lastChangedAt
+    _version
+    createdAt
+    demand
+    id
+    supply
+    updatedAt
+  }
+}
+
+-- OUTPUT (2nd Level OUTPUT) (id must be unique)
+mutation NDCPlanMutation {
+  createChildren(input: {
+      id: "1a59f493-91f5-11eb-9931-dba05b4e8987-3516aed5-1d6d-49d9-9dae-9dce5521d34b-11-68"
+  }) {
+    _deleted
+    _lastChangedAt
+    _version
+    createdAt
+    demand
+    id
+    supply
+    updatedAt
+  }
+}
+
+-- OUTCOME (1st Level OUTCOME) (id must be unique)
+mutation NDCPlanMutation {
+  createChildren(input: {
+      id: "1a59f450-91f5-11eb-9931-dba05b4e8987-cd3c30ea-3885-4244-8213-34b4577b9552-11-1"
+  }) {
+    _deleted
+    _lastChangedAt
+    _version
+    createdAt
+    demand
+    id
+    supply
+    updatedAt
+  }
+}
+
+--------------------------------------------------
+-------------------  PLAN_ELEMENT    -------------
+--------------------------------------------------
+mutation NDCPlanMutation {
+  createPlanElement(input: {linked_outcome: "7744b934-f723-11ea-a600-6d7c965266f1-cdf8c186-ed61-4a03-8fb1-7c3ea2160584-7-4355", linked_output: "7744b935-f723-11ea-a600-6d7c965266f1-f2d3773b-69b0-4579-abd8-46b83b162b6c-7-4356", linked_kpi: "7744b936-f723-11ea-a600-6d7c965266f1-46098340-57f8-4ec9-962d-e05869a418e6-7-4357", plan: "fc9ab14e111614da9ff115001d7b", column_id: 1, id: "da63c01a-aefd-49e1-a325-9ee1a8380163", _id: "08901d411f4f05426a0f5fdbc8000a3c", doc_type: "Plan Element"}) {
+    linked_output
+    linked_outcome
+    linked_kpi
+    key
+    id
+  }
+}

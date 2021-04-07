@@ -1,0 +1,462 @@
+type Children {
+	id: String!
+	demand: [String]
+	supply: [[String]]
+	_version: Int!
+	_deleted: Boolean
+	_lastChangedAt: AWSTimestamp!
+	createdAt: AWSDateTime!
+	updatedAt: AWSDateTime!
+}
+
+input CreateChildrenInput {
+	id: String!
+	demand: [String]
+	supply: [[String]]
+	_version: Int
+}
+
+input CreatePlanElementInput {
+	id: ID
+	_id: String
+	_rev: String
+	doc_type: String
+	visibility: String
+	column_id: Int
+	key: String
+	beig: Int
+	created_at: Int
+	plan: String
+	creator_id: String
+	creator_name: String
+	linked_outcome: String
+	linked_output: String
+	linked_kpi: String
+	updated_at: Int
+	updator_id: String
+	updator_name: String
+	_version: Int
+}
+
+input CreatePlanInput {
+	id: ID
+	_id: String!
+	_rev: String!
+	doc_type: String!
+	visibility: String
+	plan: String!
+	headerMap: String!
+	_version: Int
+}
+
+input CreateTreeInput {
+	id: String!
+	_version: Int
+}
+
+input DeleteChildrenInput {
+	id: ID
+	_version: Int
+}
+
+input DeletePlanElementInput {
+	id: ID
+	_version: Int
+}
+
+input DeletePlanInput {
+	id: ID
+	_version: Int
+}
+
+input DeleteTreeInput {
+	id: ID
+	_version: Int
+}
+
+enum ModelAttributeTypes {
+	binary
+	binarySet
+	bool
+	list
+	map
+	number
+	numberSet
+	string
+	stringSet
+	_null
+}
+
+input ModelBooleanInput {
+	ne: Boolean
+	eq: Boolean
+	attributeExists: Boolean
+	attributeType: ModelAttributeTypes
+}
+
+input ModelChildrenConditionInput {
+	demand: ModelStringInput
+	supply: ModelStringInput
+	and: [ModelChildrenConditionInput]
+	or: [ModelChildrenConditionInput]
+	not: ModelChildrenConditionInput
+}
+
+type ModelChildrenConnection {
+	items: [Children]
+	nextToken: String
+	startedAt: AWSTimestamp
+}
+
+input ModelChildrenFilterInput {
+	id: ModelStringInput
+	demand: ModelStringInput
+	supply: ModelStringInput
+	and: [ModelChildrenFilterInput]
+	or: [ModelChildrenFilterInput]
+	not: ModelChildrenFilterInput
+}
+
+input ModelFloatInput {
+	ne: Float
+	eq: Float
+	le: Float
+	lt: Float
+	ge: Float
+	gt: Float
+	between: [Float]
+	attributeExists: Boolean
+	attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+	ne: ID
+	eq: ID
+	le: ID
+	lt: ID
+	ge: ID
+	gt: ID
+	contains: ID
+	notContains: ID
+	between: [ID]
+	beginsWith: ID
+	attributeExists: Boolean
+	attributeType: ModelAttributeTypes
+	size: ModelSizeInput
+}
+
+input ModelIntInput {
+	ne: Int
+	eq: Int
+	le: Int
+	lt: Int
+	ge: Int
+	gt: Int
+	between: [Int]
+	attributeExists: Boolean
+	attributeType: ModelAttributeTypes
+}
+
+input ModelPlanConditionInput {
+	_id: ModelStringInput
+	_rev: ModelStringInput
+	doc_type: ModelStringInput
+	visibility: ModelStringInput
+	plan: ModelStringInput
+	headerMap: ModelStringInput
+	and: [ModelPlanConditionInput]
+	or: [ModelPlanConditionInput]
+	not: ModelPlanConditionInput
+}
+
+type ModelPlanConnection {
+	items: [Plan]
+	nextToken: String
+	startedAt: AWSTimestamp
+}
+
+input ModelPlanElementConditionInput {
+	_id: ModelStringInput
+	_rev: ModelStringInput
+	doc_type: ModelStringInput
+	visibility: ModelStringInput
+	column_id: ModelIntInput
+	key: ModelStringInput
+	beig: ModelIntInput
+	created_at: ModelIntInput
+	plan: ModelStringInput
+	creator_id: ModelStringInput
+	creator_name: ModelStringInput
+	linked_outcome: ModelStringInput
+	linked_output: ModelStringInput
+	linked_kpi: ModelStringInput
+	updated_at: ModelIntInput
+	updator_id: ModelStringInput
+	updator_name: ModelStringInput
+	and: [ModelPlanElementConditionInput]
+	or: [ModelPlanElementConditionInput]
+	not: ModelPlanElementConditionInput
+}
+
+type ModelPlanElementConnection {
+	items: [PlanElement]
+	nextToken: String
+	startedAt: AWSTimestamp
+}
+
+input ModelPlanElementFilterInput {
+	_id: ModelStringInput
+	_rev: ModelStringInput
+	doc_type: ModelStringInput
+	visibility: ModelStringInput
+	column_id: ModelIntInput
+	key: ModelStringInput
+	beig: ModelIntInput
+	created_at: ModelIntInput
+	plan: ModelStringInput
+	creator_id: ModelStringInput
+	creator_name: ModelStringInput
+	linked_outcome: ModelStringInput
+	linked_output: ModelStringInput
+	linked_kpi: ModelStringInput
+	updated_at: ModelIntInput
+	updator_id: ModelStringInput
+	updator_name: ModelStringInput
+	and: [ModelPlanElementFilterInput]
+	or: [ModelPlanElementFilterInput]
+	not: ModelPlanElementFilterInput
+}
+
+input ModelPlanFilterInput {
+	_id: ModelStringInput
+	_rev: ModelStringInput
+	doc_type: ModelStringInput
+	visibility: ModelStringInput
+	plan: ModelStringInput
+	headerMap: ModelStringInput
+	and: [ModelPlanFilterInput]
+	or: [ModelPlanFilterInput]
+	not: ModelPlanFilterInput
+}
+
+input ModelSizeInput {
+	ne: Int
+	eq: Int
+	le: Int
+	lt: Int
+	ge: Int
+	gt: Int
+	between: [Int]
+}
+
+enum ModelSortDirection {
+	ASC
+	DESC
+}
+
+input ModelStringInput {
+	ne: String
+	eq: String
+	le: String
+	lt: String
+	ge: String
+	gt: String
+	contains: String
+	notContains: String
+	between: [String]
+	beginsWith: String
+	attributeExists: Boolean
+	attributeType: ModelAttributeTypes
+	size: ModelSizeInput
+}
+
+input ModelTreeConditionInput {
+	and: [ModelTreeConditionInput]
+	or: [ModelTreeConditionInput]
+	not: ModelTreeConditionInput
+}
+
+type ModelTreeConnection {
+	items: [Tree]
+	nextToken: String
+	startedAt: AWSTimestamp
+}
+
+input ModelTreeFilterInput {
+	id: ModelStringInput
+	and: [ModelTreeFilterInput]
+	or: [ModelTreeFilterInput]
+	not: ModelTreeFilterInput
+}
+
+type Mutation {
+	createChildren(input: CreateChildrenInput!, condition: ModelChildrenConditionInput): Children
+	updateChildren(input: UpdateChildrenInput!, condition: ModelChildrenConditionInput): Children
+	deleteChildren(input: DeleteChildrenInput!, condition: ModelChildrenConditionInput): Children
+	createTree(input: CreateTreeInput!, condition: ModelTreeConditionInput): Tree
+	updateTree(input: UpdateTreeInput!, condition: ModelTreeConditionInput): Tree
+	deleteTree(input: DeleteTreeInput!, condition: ModelTreeConditionInput): Tree
+	createPlan(input: CreatePlanInput!, condition: ModelPlanConditionInput): Plan
+	updatePlan(input: UpdatePlanInput!, condition: ModelPlanConditionInput): Plan
+	deletePlan(input: DeletePlanInput!, condition: ModelPlanConditionInput): Plan
+	createPlanElement(input: CreatePlanElementInput!, condition: ModelPlanElementConditionInput): PlanElement
+	updatePlanElement(input: UpdatePlanElementInput!, condition: ModelPlanElementConditionInput): PlanElement
+	deletePlanElement(input: DeletePlanElementInput!, condition: ModelPlanElementConditionInput): PlanElement
+}
+
+type Plan {
+	id: ID!
+	_id: String!
+	_rev: String!
+	doc_type: String!
+	visibility: String
+	plan: String!
+	headerMap: String!
+	tree: [Tree]
+	_version: Int!
+	_deleted: Boolean
+	_lastChangedAt: AWSTimestamp!
+	createdAt: AWSDateTime!
+	updatedAt: AWSDateTime!
+}
+
+type PlanElement {
+	id: ID!
+	_id: String
+	_rev: String
+	doc_type: String
+	visibility: String
+	column_id: Int
+	key: String
+	beig: Int
+	created_at: Int
+	plan: String
+	creator_id: String
+	creator_name: String
+	linked_outcome: String
+	linked_output: String
+	linked_kpi: String
+	updated_at: Int
+	updator_id: String
+	updator_name: String
+	_version: Int!
+	_deleted: Boolean
+	_lastChangedAt: AWSTimestamp!
+	createdAt: AWSDateTime!
+	updatedAt: AWSDateTime!
+}
+
+type Query {
+	syncChildren(
+		filter: ModelChildrenFilterInput,
+		limit: Int,
+		nextToken: String,
+		lastSync: AWSTimestamp
+	): ModelChildrenConnection
+	getChildren(id: ID!): Children
+	listChildrens(filter: ModelChildrenFilterInput, limit: Int, nextToken: String): ModelChildrenConnection
+	syncTrees(
+		filter: ModelTreeFilterInput,
+		limit: Int,
+		nextToken: String,
+		lastSync: AWSTimestamp
+	): ModelTreeConnection
+	getTree(id: ID!): Tree
+	listTrees(filter: ModelTreeFilterInput, limit: Int, nextToken: String): ModelTreeConnection
+	syncPlans(
+		filter: ModelPlanFilterInput,
+		limit: Int,
+		nextToken: String,
+		lastSync: AWSTimestamp
+	): ModelPlanConnection
+	getPlan(id: ID!): Plan
+	listPlans(filter: ModelPlanFilterInput, limit: Int, nextToken: String): ModelPlanConnection
+	syncPlanElements(
+		filter: ModelPlanElementFilterInput,
+		limit: Int,
+		nextToken: String,
+		lastSync: AWSTimestamp
+	): ModelPlanElementConnection
+	getPlanElement(id: ID!): PlanElement
+	listPlanElements(filter: ModelPlanElementFilterInput, limit: Int, nextToken: String): ModelPlanElementConnection
+}
+
+type Subscription {
+	onCreateChildren: Children
+		@aws_subscribe(mutations: ["createChildren"])
+	onUpdateChildren: Children
+		@aws_subscribe(mutations: ["updateChildren"])
+	onDeleteChildren: Children
+		@aws_subscribe(mutations: ["deleteChildren"])
+	onCreateTree: Tree
+		@aws_subscribe(mutations: ["createTree"])
+	onUpdateTree: Tree
+		@aws_subscribe(mutations: ["updateTree"])
+	onDeleteTree: Tree
+		@aws_subscribe(mutations: ["deleteTree"])
+	onCreatePlan: Plan
+		@aws_subscribe(mutations: ["createPlan"])
+	onUpdatePlan: Plan
+		@aws_subscribe(mutations: ["updatePlan"])
+	onDeletePlan: Plan
+		@aws_subscribe(mutations: ["deletePlan"])
+	onCreatePlanElement: PlanElement
+		@aws_subscribe(mutations: ["createPlanElement"])
+	onUpdatePlanElement: PlanElement
+		@aws_subscribe(mutations: ["updatePlanElement"])
+	onDeletePlanElement: PlanElement
+		@aws_subscribe(mutations: ["deletePlanElement"])
+}
+
+type Tree {
+	id: String!
+	children: [Children!]!
+	_version: Int!
+	_deleted: Boolean
+	_lastChangedAt: AWSTimestamp!
+	createdAt: AWSDateTime!
+	updatedAt: AWSDateTime!
+}
+
+input UpdateChildrenInput {
+	id: String!
+	demand: [String]
+	supply: [[String]]
+	_version: Int
+}
+
+input UpdatePlanElementInput {
+	_id: String
+	_rev: String
+	doc_type: String
+	visibility: String
+	column_id: Int
+	key: String
+	beig: Int
+	created_at: Int
+	plan: String
+	creator_id: String
+	creator_name: String
+	linked_outcome: String
+	linked_output: String
+	linked_kpi: String
+	updated_at: Int
+	updator_id: String
+	updator_name: String
+	_version: Int
+}
+
+input UpdatePlanInput {
+	_id: String
+	_rev: String
+	doc_type: String
+	visibility: String
+	plan: String
+	headerMap: String
+	_version: Int
+}
+
+input UpdateTreeInput {
+	id: String!
+	_version: Int
+}

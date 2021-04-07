@@ -1,0 +1,53 @@
+# type Outcome implements PlanElement {
+#   id: ID!
+#   name: String!
+# }
+# type Output implements PlanElement {
+#   id: ID!
+#   name: String!
+# }
+# type KPI implements PlanElement {
+#   id: ID!
+#   name: String!
+# }
+
+type PlanElement @model {
+  _id: String
+  _rev: String
+  doc_type: String
+  visibility: String
+  column_id: Int
+  key: String
+  beig: Int
+  created_at: Int
+  plan: String
+  creator_id: String
+  creator_name: String
+  linked_outcome: String
+  linked_output: String
+  linked_kpi: String
+  updated_at: Int
+  updator_id: String
+  updator_name: String
+}
+
+type Plan @model {
+  _id: String!
+  _rev: String!
+  doc_type: String!
+  visibility: String
+  plan: String!
+  headerMap: String!
+  tree: [Tree]
+}
+
+type Tree @model   {
+  id: String!
+  children: [Children!]!
+}
+
+type Children @model {
+  id: String!
+  demand: [String]
+  supply: [[String]]
+}
