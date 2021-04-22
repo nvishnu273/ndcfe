@@ -157,10 +157,42 @@ mutation PlanMutation {
 
 :Every time a delete happens with Delete in DynamoDB with conflict resolution a new version is added. So how to Query?
 
+
+1. CREATE Outcome
+
+-- OUTCOME (1st Level OUTCOME) (id must be unique)
+mutation NDCPlanMutation {
+  createChildren(input: {
+      id: "1a59f450-91f5-11eb-9931-dba05b4e8987-cd3c30ea-3885-4244-8213-34b4577b9552-11-1"
+  }) {
+    _deleted
+    _lastChangedAt
+    _version
+    createdAt
+    demand
+    id
+    supply
+    updatedAt
+  }
+}
+
 --------------------------------------------------
 -------------------  CHILDREN    -----------------
 --------------------------------------------------
 -- KPI (3rd Level KPI1) (id must be unique)
+
+--PlanElement of the KPI
+mutation NDCPlanMutation {
+  createPlanElement(input: {linked_outcome: "7744b934-f723-11ea-a600-6d7c965266f1-cdf8c186-ed61-4a03-8fb1-7c3ea2160584-7-4355", linked_output: "7744b935-f723-11ea-a600-6d7c965266f1-f2d3773b-69b0-4579-abd8-46b83b162b6c-7-4356", linked_kpi: "7744b936-f723-11ea-a600-6d7c965266f1-46098340-57f8-4ec9-962d-e05869a418e6-7-4357", plan: "fc9ab14e111614da9ff115001d7b", column_id: 1, id: "da63c01a-aefd-49e1-a325-9ee1a8380163", _id: "08901d411f4f05426a0f5fdbc8000a3c", doc_type: "Plan Element"}) {
+    linked_output
+    linked_outcome
+    linked_kpi
+    key
+    id
+  }
+}
+
+--Tree Element for the KPI
 mutation NDCPlanMutation {
   createChildren(input: {
       id: "1a59f47d-91f5-11eb-9931-dba05b4e8987-37a3d258-3fe1-4e2b-95d8-e1963afa3a0c-11-46",
@@ -212,21 +244,7 @@ mutation NDCPlanMutation {
   }
 }
 
--- OUTCOME (1st Level OUTCOME) (id must be unique)
-mutation NDCPlanMutation {
-  createChildren(input: {
-      id: "1a59f450-91f5-11eb-9931-dba05b4e8987-cd3c30ea-3885-4244-8213-34b4577b9552-11-1"
-  }) {
-    _deleted
-    _lastChangedAt
-    _version
-    createdAt
-    demand
-    id
-    supply
-    updatedAt
-  }
-}
+
 
 --------------------------------------------------
 -------------------  PLAN_ELEMENT    -------------
