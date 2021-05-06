@@ -1,0 +1,76 @@
+1. Create a plan Element - id => "86a0fc9ab14e111614da9ff115001d7b"
+2. Create plan Element(s) of doc_type = "Outcome"
+        2.a) id => "1a59f450-91f5-11eb-9931-dba05b4e8987-cd3c30ea-3885-4244-8213-34b4577b9552-11-1"
+            2.a.1) => Create plan Element(s) of doc_type = "Output"
+                2.a.1.a) => "1a59f451-91f5-11eb-9931-dba05b4e8987-c1483e72-f221-4eb2-8a22-4c9a6c5b7b9c-11-2"
+                      2.a.1.a.1) => Create plan Element(s) of doc_type = "KPI"
+                          2.a.1.a.1.a) =>  "1a59f452-91f5-11eb-9931-dba05b4e8987-6d6eefbc-1727-4651-bd52-a81b81c53b20-11-3"
+                          2.a.1.a.1.supply) => 1
+                                "1a59f453-91f5-11eb-9931-dba05b4e8987-88b0dc53-c8eb-4e12-bc8d-1394cbc2016d-11-4",
+                                "1a59f454-91f5-11eb-9931-dba05b4e8987-440586cd-d37e-41d4-ad85-18522aed47f6-11-5"
+                          2.a.1.a.1.supply) => 2
+                                "c0ae6dccd91ac1f1ac9ffc222b00056c",
+                                "c0ae6dccd91ac1f1ac9ffc222b001336",
+                                "c0ae6dccd91ac1f1ac9ffc222b001bdf"
+                          2.a.1.a.1.demand) => 1
+                                "1a59f45b-91f5-11eb-9931-dba05b4e8987-4ff0f221-fe87-46cd-935e-8e8ce25159c2-11-12",
+                                "1a59f45c-91f5-11eb-9931-dba05b4e8987-d4d72e44-4afd-418a-b450-01189805d38f-11-13",
+                                "1a59f45d-91f5-11eb-9931-dba05b4e8987-4eaad28e-1149-4404-8608-f3fbc93fd2c7-11-14"
+                      2.a.1.a.2) => Create plan Element(s) of doc_type = "KPI"
+                          2.a.1.a.2.a) =>  "1a59f452-91f5-11eb-9931-dba05b4e8987-6d6eefbc-1727-4651-bd52-a81b81c53b20-12-3"
+                          2.a.1.a.2.supply) => 1
+                                "1a59f453-91f5-11eb-9931-dba05b4e8987-88b0dc53-c8eb-4e12-bc8d-1394cbc2016d-12-4",
+                                "1a59f454-91f5-11eb-9931-dba05b4e8987-440586cd-d37e-41d4-ad85-18522aed47f6-12-5"
+                          2.a.1.a.2.supply) => 2
+                                "d0ae6dccd91ac1f1ac9ffc222b00056c",
+                                "d0ae6dccd91ac1f1ac9ffc222b001336",
+                                "d0ae6dccd91ac1f1ac9ffc222b001bdf"
+                          2.a.1.a.2.demand) => 1
+                                "1a59f45b-91f5-11eb-9931-dba05b4e8987-4ff0f221-fe87-46cd-935e-8e8ce25159c2-12-12",
+                                "1a59f45c-91f5-11eb-9931-dba05b4e8987-d4d72e44-4afd-418a-b450-01189805d38f-12-13",
+                                "1a59f45d-91f5-11eb-9931-dba05b4e8987-4eaad28e-1149-4404-8608-f3fbc93fd2c7-12-14"
+                2.a.1.b) => "1a59f467-91f5-11eb-9931-dba05b4e8987-c034c426-9528-44fc-b5a7-540fd3b22c12-12-24"
+                      2.a.1.b.1) => Create plan Element(s) of doc_type = "KPI"
+                          2.a.1.b.1.a) =>  "1a59f468-91f5-11eb-9931-dba05b4e8987-511b8404-87eb-4663-805d-40e08b66a972-11-25"
+                          2.a.1.b.1.supply) => 1
+                                "1a59f469-91f5-11eb-9931-dba05b4e8987-6977f67b-345e-41c0-bf38-272558fdcd29-11-26",
+                                "1a59f46a-91f5-11eb-9931-dba05b4e8987-365c5b09-a8ee-4f4e-af99-31e959415467-11-27"
+                          2.a.1.b.1.demand) => 1
+                                "1a59f471-91f5-11eb-9931-dba05b4e8987-894dfe99-e485-41be-bfee-a686f1e65161-11-34",
+                                "1a59f472-91f5-11eb-9931-dba05b4e8987-5190a174-016a-4bea-9758-a33af22f0281-11-35"
+        2.b) id => "1a5a1b72-91f5-11eb-9931-dba05b4e8987-4778d180-9ccc-4cd0-8c68-90cd30963ed4-11-90"
+            2.b.1) => Create plan Element(s) of doc_type = "Output"
+                2.b.1.a) => "1a5a1b73-91f5-11eb-9931-dba05b4e8987-85fbf357-9774-4ee6-834a-a6a4fef48f64-11-91"
+                      2.b.1.a.1) => Create plan Element(s) of doc_type = "KPI"
+                          2.b.1.a.1.a) =>  "1a5a1b74-91f5-11eb-9931-dba05b4e8987-de51370a-5392-4c0d-9504-d36a8901d6d7-11-92"
+                          2.b.1.a.1.supply) => 1
+                                "1a5a1b75-91f5-11eb-9931-dba05b4e8987-02e603cf-80d2-4e92-945d-4667720dc215-11-93",
+                                "1a5a1b76-91f5-11eb-9931-dba05b4e8987-daf3e8cf-c16a-4a0b-b7cb-5504a63a798b-11-94"
+                          2.b.1.a.1.demand) => 1
+                                "1a5a1b7d-91f5-11eb-9931-dba05b4e8987-169cd49f-8110-411c-8989-56b00755c0c2-11-101",
+                                "1a5a1b7e-91f5-11eb-9931-dba05b4e8987-760f0fde-cfa7-402c-aa89-998a52af9f04-11-102",
+                                "1a5a1b7f-91f5-11eb-9931-dba05b4e8987-78ef8181-7be7-417a-8f2e-d76e98627e22-11-103"
+
+
+-------------------------------
+------------MUTATION(S)--------------
+-------------------------------
+
+1. Create Plan Element
+
+mutation CreatePlan {
+  createPlan(input: {_id: "86a0fc9ab14e111614da9ff115001d7b", 
+  _rev: "8c09990e-a756-4a64-8dd8-195ed3d3dd90", 
+  doc_type: "Plan Tree", headerMap: "8e95600d-cd1a-40e2-87e8-106a1d201882", plan: "fc9ab14e111614da9ff115001d7b"}) {
+    _deleted
+    _id
+    _lastChangedAt
+    _rev
+    _version
+    createdAt
+    doc_type
+    headerMap
+    id
+    plan
+  }
+}

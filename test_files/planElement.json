@@ -1,0 +1,19 @@
+{
+  "_id": "08901d411f4f05426a0f5fdbc8000a3c",
+  "_rev": "1-da7a32a4a2c92b9209f342db432b967c",
+  "doc_type": "Plan Element",
+  "visibility": "protected",
+  "column_id": 1,
+  "key": "implementing_entity",
+  "beig": 0,
+  "created_at": 1610036265,
+  "plan": "f82fce04c8e6204e6081fdbefb000755",
+  "creator_id": "10",
+  "creator_name": "Beatriz Garabosky",
+  "linked_outcome": "7744b934-f723-11ea-a600-6d7c965266f1-cdf8c186-ed61-4a03-8fb1-7c3ea2160584-7-4355",
+  "linked_output": "7744b935-f723-11ea-a600-6d7c965266f1-f2d3773b-69b0-4579-abd8-46b83b162b6c-7-4356",
+  "linked_kpi": "7744b936-f723-11ea-a600-6d7c965266f1-46098340-57f8-4ec9-962d-e05869a418e6-7-4357",
+  "updated_at": 1610036265,
+  "updator_id": "10",
+  "updator_name": "Beatriz Garabosky"
+}
